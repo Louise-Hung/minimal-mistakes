@@ -261,6 +261,24 @@ figcaption {
   }
 }
 
+.album-gallery {
+  gap: 1em;
+
+  figure {
+    margin: 0 0 1.5em;
+  }
+
+  .album-thumb {
+    height: 10rem;
+    object-fit: cover;
+  }
+
+  figcaption {
+    text-align: center;
+    width: 100%;
+  }
+}
+
 /* Fix IE9 SVG bug */
 
 svg:not(:root) {
