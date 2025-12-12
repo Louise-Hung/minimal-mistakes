@@ -262,20 +262,19 @@ figcaption {
 }
 
 .album-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1em;
 
   figure {
-    margin: 0 0 1.5em;
+    margin: 0;
   }
 
   .album-thumb {
-    height: 10rem;
-    object-fit: cover;
-  }
-
-  figcaption {
-    text-align: center;
+    display: block;
     width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
   }
 }
 
