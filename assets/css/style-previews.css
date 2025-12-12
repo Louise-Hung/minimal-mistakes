@@ -42,6 +42,12 @@ body {
   border: 1px solid rgba(20, 48, 32, 0.08);
 }
 
+.preview-card.selected {
+  border: 2px solid rgba(31, 106, 130, 0.6);
+  box-shadow: 0 16px 36px rgba(31, 106, 130, 0.24);
+  transform: translateY(-6px);
+}
+
 .preview-card::before {
   content: "";
   position: absolute;
@@ -61,6 +67,24 @@ body {
   border-radius: 999px;
   background: rgba(18, 32, 21, 0.08);
   color: #0f2717;
+  text-transform: uppercase;
+}
+
+.preview-card .selection-label {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(31, 106, 130, 0.12);
+  color: #0f2c44;
+  font-weight: 800;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(31, 106, 130, 0.35);
   text-transform: uppercase;
 }
 
