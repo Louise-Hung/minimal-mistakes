@@ -9,8 +9,10 @@ classes: wide
 
 {% assign album_images = site.static_files | where_exp: "file", "file.path contains '/assets/images/album/'" %}
 {% assign album_images = album_images | sort: "path" %}
+{% assign album_count = album_images | size %}
 
 {% if album_images and album_images.size > 0 %}
+<p>目前共收錄 {{ album_count }} 張照片，已加入下方縮圖列表中。</p>
 <div class="album-gallery">
   {% for file in album_images %}
   <figure>
