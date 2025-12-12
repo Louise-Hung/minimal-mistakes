@@ -5,19 +5,18 @@ permalink: /album/
 classes: wide
 ---
 
-歡迎瀏覽你的相簿。系統會自動撈取放在 `assets/images/album/` 的所有圖片，並在下方以網格呈現。
+記錄與分享我的所見與所聞
 
 {% assign album_images = site.static_files | where_exp: "file", "file.path contains '/assets/images/album/'" %}
 {% assign album_images = album_images | sort: "path" %}
 
 {% if album_images and album_images.size > 0 %}
-<div class="gallery third">
+<div class="album-gallery">
   {% for file in album_images %}
   <figure>
     <a href="{{ file.path | relative_url }}">
-      <img src="{{ file.path | relative_url }}" alt="{{ file.basename | escape }}">
+      <img class="album-thumb" src="{{ file.path | relative_url }}" alt="{{ file.basename | escape }}" loading="lazy">
     </a>
-    <figcaption>{{ file.basename | escape }}</figcaption>
   </figure>
   {% endfor %}
 </div>
