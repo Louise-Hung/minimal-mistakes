@@ -1,0 +1,260 @@
+:root {
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Cormorant Garamond", "Iowan Old Style", "Book Antiqua", Garamond, serif;
+  --shadow-soft: 0 14px 36px rgba(12, 45, 20, 0.18);
+  --shadow-crisp: 0 12px 28px rgba(10, 30, 52, 0.2);
+  --shadow-meadow: 0 16px 38px rgba(120, 138, 74, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 3rem clamp(1.5rem, 4vw, 3rem);
+  background: radial-gradient(circle at 18% 20%, rgba(98, 152, 116, 0.22), transparent 26%),
+              radial-gradient(circle at 82% 12%, rgba(167, 205, 152, 0.18), transparent 28%),
+              linear-gradient(180deg, #f6fbf6 0%, #e9f3ea 40%, #dbe8dd 100%);
+  font-family: var(--font-sans);
+  color: #122015;
+  min-height: 100vh;
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.preview-card {
+  position: relative;
+  padding: 2rem;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fdfdfb;
+  box-shadow: var(--shadow-soft);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  display: grid;
+  gap: 0.75rem;
+  border: 1px solid rgba(20, 48, 32, 0.08);
+}
+
+.preview-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 40%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+}
+
+.preview-card .badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(18, 32, 21, 0.08);
+  color: #0f2717;
+  text-transform: uppercase;
+}
+
+.preview-card h1 {
+  margin: 0.75rem 0 0;
+  font-size: 1.6rem;
+  letter-spacing: -0.01em;
+}
+
+.preview-card p {
+  margin: 0;
+  line-height: 1.65;
+  color: rgba(18, 32, 21, 0.82);
+}
+
+.preview-card .cta {
+  justify-self: start;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 12px;
+  padding: 0.65rem 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.preview-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(20, 48, 32, 0.2);
+}
+
+/* Style 1: Evergreen Ridge */
+.evergreen-ridge {
+  background: linear-gradient(160deg, #e6f2e8 0%, #d6e8db 40%, #c8decf 100%);
+  border: 1px solid rgba(40, 85, 52, 0.18);
+  box-shadow: var(--shadow-soft);
+}
+
+.evergreen-ridge::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(45, 95, 62, 0.18), transparent 32%),
+              radial-gradient(circle at 80% 70%, rgba(76, 132, 98, 0.22), transparent 28%);
+  pointer-events: none;
+}
+
+.evergreen-ridge .badge {
+  background: #2d633d;
+  color: #eef6ee;
+  box-shadow: 0 10px 24px rgba(45, 99, 61, 0.25);
+}
+
+.evergreen-ridge h1 {
+  color: #1f4a2a;
+}
+
+.evergreen-ridge .cta {
+  background: linear-gradient(120deg, #2d633d, #4b7c52);
+  color: #f4fff5;
+  box-shadow: 0 12px 30px rgba(37, 90, 55, 0.3);
+}
+
+.evergreen-ridge .cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(37, 90, 55, 0.34);
+}
+
+/* Style 2: Rustic Trail */
+.rustic-trail {
+  background: linear-gradient(180deg, #f8f2e6 0%, #efe3d1 45%, #e3d2b9 100%);
+  color: #2b2114;
+  font-family: var(--font-serif);
+  border: 2px solid #c6ad86;
+  box-shadow: 0 10px 0 #c09c62, 0 20px 36px rgba(61, 39, 18, 0.25);
+}
+
+.rustic-trail .badge {
+  background: #4a3a24;
+  color: #f8f2e6;
+  border: 1px solid #f8f2e6;
+}
+
+.rustic-trail h1 {
+  font-size: 1.75rem;
+  letter-spacing: 0.01em;
+  color: #3a2c1c;
+}
+
+.rustic-trail p {
+  color: #4e3a22;
+  line-height: 1.75;
+}
+
+.rustic-trail .cta {
+  background: linear-gradient(120deg, #b78846, #9f6c2d);
+  color: #2b2114;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 12px 26px rgba(69, 42, 14, 0.3);
+}
+
+.rustic-trail .cta:hover {
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 16px 32px rgba(69, 42, 14, 0.34);
+}
+
+/* Style 3: Misty Peaks */
+.misty-peaks {
+  background: linear-gradient(160deg, #eef3f6 0%, #d9e2e7 45%, #c7d1d9 100%);
+  color: #0f202f;
+  border: 1px solid rgba(15, 32, 47, 0.1);
+  box-shadow: var(--shadow-crisp);
+}
+
+.misty-peaks::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 25% 15%, rgba(196, 214, 224, 0.35), transparent 32%),
+              radial-gradient(circle at 80% 70%, rgba(158, 176, 192, 0.3), transparent 30%);
+  pointer-events: none;
+}
+
+.misty-peaks .badge {
+  background: #0f2c44;
+  color: #e9f4ff;
+}
+
+.misty-peaks h1 {
+  color: #0f2c44;
+}
+
+.misty-peaks p {
+  color: rgba(15, 32, 47, 0.82);
+}
+
+.misty-peaks .cta {
+  background: linear-gradient(120deg, #1f6a82, #4b8da6);
+  color: #f2fbff;
+  box-shadow: 0 12px 28px rgba(31, 106, 130, 0.3);
+}
+
+.misty-peaks .cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(31, 106, 130, 0.34);
+}
+
+/* Style 4: Sunlit Meadow */
+.sunlit-meadow {
+  background: linear-gradient(150deg, #f6f9ed 0%, #eaf2d8 45%, #dce7c3 100%);
+  border: 1px solid rgba(127, 148, 70, 0.18);
+  box-shadow: var(--shadow-meadow);
+}
+
+.sunlit-meadow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 214, 126, 0.3), transparent 32%),
+              radial-gradient(circle at 78% 72%, rgba(144, 176, 92, 0.26), transparent 30%);
+  pointer-events: none;
+}
+
+.sunlit-meadow .badge {
+  background: #809b3c;
+  color: #f9fde9;
+  box-shadow: 0 12px 26px rgba(128, 155, 60, 0.28);
+}
+
+.sunlit-meadow h1 {
+  color: #687b2c;
+}
+
+.sunlit-meadow p {
+  color: #576932;
+}
+
+.sunlit-meadow .cta {
+  background: linear-gradient(120deg, #c9dc7a, #9dbc4b);
+  color: #2f3b14;
+  box-shadow: 0 12px 26px rgba(157, 188, 75, 0.32);
+}
+
+.sunlit-meadow .cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(157, 188, 75, 0.36);
+}
+
+@media (max-width: 720px) {
+  body {
+    padding: 2rem 1.25rem;
+  }
+
+  .preview-card {
+    padding: 1.6rem;
+  }
+}
